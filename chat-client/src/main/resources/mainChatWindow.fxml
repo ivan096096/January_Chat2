@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.geek.Chat_Client.MainChatController">
+    <VBox fx:id="loginPanel">
+        <Label text="Login: "/>
+        <TextField fx:id="loginField"/>
+        <Label text="Password: "/>
+        <PasswordField fx:id="passwordField"/>
+        <Button text="connect" onAction="#sendAuth"/>
+    </VBox>
+    <VBox fx:id="mainChatPanel" visible="false">
+        <MenuBar>
+            <Menu text="File">
+                <MenuItem onAction="#connectToServer" text="Connect" />
+                <MenuItem onAction="#disconnectFromServer" text="Disconnect" />
+                <MenuItem onAction="#mockAction" text="Item3" />
+                <MenuItem onAction="#mockAction" text="Item4" />
+                <MenuItem onAction="#mockAction" text="Item5" />
+                <MenuItem onAction="#exit" text="Exit" />
+            </Menu>
+            <Menu text="Edit">
+                <MenuItem onAction="#mockAction" text="Item1" />
+                <MenuItem onAction="#mockAction" text="Item2" />
+                <MenuItem onAction="#mockAction" text="Item3" />
+                <MenuItem onAction="#mockAction" text="Item4" />
+                <MenuItem onAction="#mockAction" text="Item5" />
+                <MenuItem onAction="#mockAction" text="Item6" />
+            </Menu>
+            <Menu text="View">
+                <MenuItem onAction="#mockAction" text="Item1" />
+                <MenuItem onAction="#mockAction" text="Item2" />
+                <MenuItem onAction="#mockAction" text="Item3" />
+                <MenuItem onAction="#mockAction" text="Item4" />
+                <MenuItem onAction="#mockAction" text="Item5" />
+                <MenuItem onAction="#mockAction" text="Item6" />
+            </Menu>
+            <Menu text="Help">
+                <MenuItem onAction="#mockAction" text="Item1" />
+                <MenuItem onAction="#mockAction" text="Item2" />
+                <MenuItem onAction="#mockAction" text="Item3" />
+                <MenuItem onAction="#mockAction" text="Item4" />
+                <MenuItem onAction="#showHelp" text="Help" />
+                <MenuItem onAction="#showAbout" text="About" />
+            </Menu>
+        </MenuBar>
+        <HBox VBox.vgrow="ALWAYS">
+            <TextArea fx:id="mainChatArea" editable="false" prefHeight="400.0" prefWidth="413.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets left="5.0" right="10.0" />
+                </HBox.margin>
+            </TextArea>
+            <ListView minWidth="85.0" prefHeight="400.0" prefWidth="85.0" fx:id="contactList">
+                <HBox.margin>
+                    <Insets left="20.0" right="5.0" />
+                </HBox.margin>
+            </ListView>
+        </HBox>
+        <HBox VBox.vgrow="ALWAYS">
+            <TextField fx:id="inputField" onAction="#sendMessage" prefHeight="70.0" HBox.hgrow="ALWAYS">
+                <HBox.margin>
+                    <Insets left="5.0" right="5.0" />
+                </HBox.margin>
+            </TextField>
+            <Button fx:id="btnSend" minWidth="87.0" onAction="#sendMessage" prefHeight="70.0" prefWidth="87.0" text="SEND">
+                <HBox.margin>
+                    <Insets left="5.0" right="5.0" />
+                </HBox.margin>
+            </Button>
+        </HBox>
+    </VBox>
+
+</AnchorPane>
