@@ -21,26 +21,28 @@ public class Server {
   }
 
   public void start() {
-      try (ServerSocket serverSocket = new ServerSocket(PORT)) {
-        System.out.println("Server start!");
-        while (true) {
-          System.out.println("Waiting for connection......");
-          Socket socket = serverSocket.accept();
-          System.out.println("Client connected");
-          ClientHandler clientHandler = new ClientHandler(socket, this);
-          clientHandler.handle();
+    try (ServerSocket serverSocket = new ServerSocket(PORT)) {
+      System.out.println("Server start!");
+      authService.start();
+      while (true) {
+        System.out.println("Waiting for connection......");
+        Socket socket = serverSocket.accept();
+        System.out.println("Client connected");
+        ClientHandler clientHandler = new ClientHandler(socket, this);
+        clientHandler.handle();
 
-        }
-      } catch (IOException e) {
-        e.printStackTrace();
-      } finally {
-        authService.stop();
-        shutdown();
       }
+    } catch (IOException e) {
+      e.printStackTrace();
+    } finally {
+      authService.stop();
+      shutdown();
+    }
 
   }
 
-  public void privateMessage(String sender, String recipient, String message, ClientHandler senderHandler) {
+  public void privateMessage(String sender, String recipient, String message,
+      ClientHandler senderHandler) {
     var handler = getHandlerByUser(recipient);
     if (handler == null) {
       senderHandler.send(String.format("/error%s recipient not found: %s", REGEX, recipient));
@@ -49,15 +51,6 @@ public class Server {
     message = String.format("[PRIVATE] [%s] -> [%s]: %s", sender, recipient, message);
     handler.send(message);
     senderHandler.send(message);
-  }
-
-  private ClientHandler getHandlerByUser(String username) {
-    for (ClientHandler clientHandler : clientHandlers) {
-      if (clientHandler.getUserNick().equals(username)) {
-        return clientHandler;
-      }
-    }
-    return null;
   }
 
 
@@ -98,6 +91,15 @@ public class Server {
       }
     }
     return false;
+  }
+
+  private ClientHandler getHandlerByUser(String username) {
+    for (ClientHandler clientHandler : clientHandlers) {
+      if (clientHandler.getUserNick().equals(username)) {
+        return clientHandler;
+      }
+    }
+    return null;
   }
 
   private void shutdown() {

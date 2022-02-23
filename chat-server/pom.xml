@@ -12,8 +12,7 @@
     <artifactId>chat-server</artifactId>
   <packaging>pom</packaging>
   <modules>
-    <module>src</module>
-    <module>main</module>
+
   </modules>
 
   <properties>
