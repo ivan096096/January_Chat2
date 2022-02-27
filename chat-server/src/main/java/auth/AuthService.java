@@ -2,7 +2,7 @@ package auth;
 
 import entity.User;
 
-public interface AuthService {
+public interface AuthService  {
   void start();
   void stop();
   String authorizeUserByLoginAndPassword(String login, String password);

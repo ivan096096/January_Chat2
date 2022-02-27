@@ -1,7 +1,6 @@
 package auth;
 
 
-
 import entity.User;
 import error.WrongCredentialsException;
 import java.util.ArrayList;
@@ -11,8 +10,11 @@ public class InMemoryAuthService implements AuthService {
 
   private List<User> users;
 
+
   public InMemoryAuthService() {
-    this.users = new ArrayList<>();
+
+    this.users =
+        new ArrayList<>();
     users.addAll(List.of(
         new User("log1", "pass", "nick1", "secret"),
         new User("log2", "pass", "nick2", "secret"),

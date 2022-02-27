@@ -5,6 +5,7 @@ import error.WrongCredentialsException;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
 
@@ -62,10 +63,6 @@ public class ClientHandler {
 
   private void authorize() {
     System.out.println("Authorizing");
-    while (true) {
-      try {
-        var message = in.readUTF();
-
             Thread task = new Thread(() -> {
               System.out.println("Время пошло");
               try {
@@ -81,6 +78,10 @@ public class ClientHandler {
               }
             });
             task.start();
+    while (true) {
+      try {
+        var message = in.readUTF();
+
         if (message.startsWith("/auth")) {
           var parsedAuthMessage = message.split(Server.REGEX);
           var response = "";
@@ -115,6 +116,13 @@ public class ClientHandler {
       }
 
     }
+
+  }
+  private static void fileMessenger() throws IOException {
+var file = new File("fileMesseg/chat_messeg.txt");
+if(!file.exists()){
+  file.createNewFile();
+}
 
   }
 

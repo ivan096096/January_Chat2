@@ -28,7 +28,7 @@ import java.net.Socket;
     public void readMessages() {
       var thread = new Thread(() -> {
         try {
-          while (!Thread.currentThread().isInterrupted() && !socket.isClosed()) {
+          while (!Thread.currentThread().isInterrupted() && !socket.isClosed() ) {
             var message = in.readUTF();
             messageProcessor.processMessage(message);
           }
@@ -36,7 +36,6 @@ import java.net.Socket;
           e.printStackTrace();
         }
       });
-      thread.setDaemon(true);
       thread.start();
     }
 

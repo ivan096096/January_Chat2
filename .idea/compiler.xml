@@ -10,7 +10,10 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="fileMesseger" target="17" />
+      <module name="FileUserMessanger" target="17" />
       <module name="main" target="17" />
+      <module name="SQL.db" target="17" />
       <module name="src" target="17" />
     </bytecodeTargetLevel>
   </component>
