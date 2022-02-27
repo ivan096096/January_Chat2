@@ -60,6 +60,7 @@ public class MainChatController implements Initializable, MessageProcessor {
   @FXML
   public VBox mainChatPanel;
 
+  private History_Messeg historyMesseg;
   private String nick;
   private NetworkService networkService;
   public static final String REGEX = "%!%";
@@ -76,7 +77,7 @@ public class MainChatController implements Initializable, MessageProcessor {
     } else {
       networkService.sendMessage("/p" + REGEX + recipient + REGEX + message);
     }
-
+    historyMesseg.writeMessage(String.format("[ME] %s\n", message));
     inputField.clear();
   }
 
@@ -97,6 +98,11 @@ public class MainChatController implements Initializable, MessageProcessor {
         this.nick = splitMessage[1];
         loginPanel.setVisible(false);
         mainChatPanel.setVisible(true);
+        this.historyMesseg = new History_Messeg(nick);
+        var history = historyMesseg.readHistory();
+        for (String s : history) {
+          mainChatArea.appendText(s + System.lineSeparator());
+        }
         break;
       case "/error":
         showError(splitMessage[1]);
@@ -117,6 +123,7 @@ public class MainChatController implements Initializable, MessageProcessor {
         break;
       default:
         mainChatArea.appendText(splitMessage[0] + System.lineSeparator());
+        historyMesseg.writeMessage(splitMessage[0] + System.lineSeparator());
         break;
     }
   }

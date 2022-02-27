@@ -5,26 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a989d538-3a5c-4151-995e-169e4edd79fa" name="Changes" comment="lesson5">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-client/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-commond/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-commond/src/main/java/Property/PropertyReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-server/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-client/src/main/java/ru/geek/Chat_Client/MainChatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/src/main/java/ru/geek/Chat_Client/MainChatController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-client/src/main/java/ru/geek/Chat_Client/network/NetworkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/src/main/java/ru/geek/Chat_Client/network/NetworkService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-client/src/main/resources/mainChatWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-client/src/main/resources/mainChatWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chat-server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-server/src/main/java/auth/DataBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-server/src/main/java/auth/DataBaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-server/src/main/java/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-server/src/main/java/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-server/src/main/java/entity/UserDataDaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-server/src/main/java/entity/UserDataDaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-server/src/main/java/server/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-server/src/main/java/server/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/chat-server/src/main/java/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +78,7 @@
       <recent name="auth" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Launcher (1)">
+  <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="App" />
       <module name="chat-server" />
@@ -124,9 +107,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Launcher (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Launcher" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="ru.geek.Chat_Client.Launcher" />
-      <module name="chat-client" />
+      <module name="January_Chat" />
+      <option name="VM_PARAMETERS" value="C:\Program Files\Java\javafx-sdk-17.0.2\lib" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.geek.Chat_Client.*" />
@@ -137,12 +123,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Launcher" type="Application" factoryName="Application" singleton="false" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="17" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.geek.Chat_Client.Launcher" />
-      <module name="January_Chat" />
-      <option name="VM_PARAMETERS" value="C:\Program Files\Java\javafx-sdk-17.0.2\lib" />
+      <module name="chat-client" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="ru.geek.Chat_Client.*" />
@@ -288,7 +271,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645635589724</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="lesson5">
+      <created>1645980988678</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1645980988678</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
