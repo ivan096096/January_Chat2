@@ -10,8 +10,8 @@ import java.io.IOException;
 import java.net.Socket;
 import java.util.Timer;
 import java.util.TimerTask;
-
-
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class ClientHandler {
@@ -20,11 +20,13 @@ public class ClientHandler {
   private DataOutputStream out;
   private DataInputStream in;
   private Thread handlerThread;
+  private ExecutorService cachedService;
   private Server server;
   private String user;
   public ClientHandler(Socket socket, Server server) {
     authTimeout = PropertyReader.getInstance().getAuthTimeout();
     try {
+      this.cachedService = Executors.newCachedThreadPool();
       this.server = server;
       this.socket = socket;
       this.in = new DataInputStream(socket.getInputStream());
@@ -35,8 +37,9 @@ public class ClientHandler {
     }
   }
 
+
   public void handle() {
-    handlerThread = new Thread(() -> {
+    cachedService.execute(()->{
       authorize();
       while (!Thread.currentThread().isInterrupted() && !socket.isClosed()) {
         try {
@@ -48,7 +51,7 @@ public class ClientHandler {
         }
       }
     });
-    handlerThread.start();
+    cachedService.shutdown();
   }
 
   private void handleMessage(String message) {
